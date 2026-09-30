@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Daniel ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: radial-gradient(circle at top, #182848, #050914 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ESTRELLAS */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 80px 80px, 120px 120px;
+    background-position: 0 0, 40px 60px;
+    opacity: .35;
+    pointer-events: none;
+}
+
+/* PANTALLA INICIAL */
+
+.inicio {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #17284d, #03050c 80%);
+    transition: opacity 1s ease, visibility 1s;
+}
+
+.inicio.ocultar {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.inicio h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.inicio p {
+    opacity: .8;
+    font-size: 1.1rem;
+}
+
+/* SOBRE */
+
+.sobre {
+    width: 230px;
+    height: 155px;
+    margin-top: 25px;
+    position: relative;
+    cursor: pointer;
+    animation: flotar 2.5s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.sobre-base {
+    position: absolute;
+    inset: 0;
+    background: #f4d6d9;
+    border-radius: 5px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.4);
+}
+
+.sobre-tapa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 115px solid transparent;
+    border-right: 115px solid transparent;
+    border-top: 85px solid #d99ba5;
+    z-index: 2;
+}
+
+.corazon {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%,-50%);
+    font-size: 38px;
+}
+
+/* CARTA */
+
+.contenido {
+    max-width: 850px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: aparecer 2s ease;
+}
+
+.subtitulo {
+    opacity: .75;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carta {
+    background: rgba(255,255,255,.94);
+    color: #252525;
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.08rem;
+}
+
+.carta h2 {
+    text-align: center;
+    color: #9c5261;
+    margin-bottom: 30px;
+}
+
+.carta p {
+    margin-bottom: 22px;
+}
+
+/* FRASES */
+
+.frase {
+    margin: 60px auto;
+    max-width: 700px;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.dorado {
+    color: #ffd978;
+}
+
+/* FOTOS */
+
+.fotos {
+    margin-top: 70px;
+}
+
+.fotos h2 {
+    font-size: 2rem;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.foto {
+    width: 230px;
+    height: 280px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: rgba(255,255,255,.1);
+    padding: 8px;
+    transition: transform .4s;
+}
+
+.foto:hover {
+    transform: rotate(-2deg) scale(1.04);
+}
+
+/* INFINITO */
+
+.infinito {
+    margin: 80px auto;
+    font-size: 6rem;
+    animation: brillo 2s infinite alternate;
+}
+
+@keyframes brillo {
+    from { text-shadow: 0 0 5px #fff; }
+    to { text-shadow: 0 0 30px #ffe89a, 0 0 60px #fff; }
+}
+
+/* BOTÓN */
+
+.boton {
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background: #f4c95d;
+    color: #30230b;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform .3s;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+/* FINAL */
+
+.final {
+    margin-top: 100px;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.final h2 {
+    font-size: 2.3rem;
+}
+
+.firma {
+    margin-top: 35px;
+    font-size: 1.6rem;
+    font-style: italic;
+}
+
+/* CORAZONES */
+
+.corazon-flotante {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: subir 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+@media(max-width:600px) {
+    .titulo {
+        font-size: 2.2rem;
+    }
+
+    .carta {
+        padding: 25px;
+        font-size: 1rem;
+    }
+
+    .foto {
+        width: 90%;
+        height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PANTALLA DEL SOBRE -->
+
+<section class="inicio" id="inicio">
+
+    <h1>Daniel...</h1>
+
+    <p>Tengo algo para ti.</p>
+
+    <div class="sobre" onclick="abrirCarta()">
+        <div class="sobre-base"></div>
+        <div class="sobre-tapa"></div>
+        <div class="corazon">♡</div>
+    </div>
+
+    <p>Haz clic en el sobre 💌</p>
+
+</section>
+
+
+<!-- CONTENIDO -->
+
+<main class="contenido">
+
+    <h1 class="titulo">Para Daniel ♡</h1>
+
+    <p class="subtitulo">
+        Una pequeña parte de todo lo que quería decirte.
+    </p>
+
+
+    <article class="carta">
+
+        <h2>Daniel:</h2>
+
+        <p>
+        Quién diría que todo esto empezaría de una manera tan random:
+        yo agarrando el celular de mi amiga para molestarte y terminando
+        hablando contigo durante todo este tiempo.
+        </p>
+
+        <p>
+        Si alguien me hubiera dicho aquel día que un mes después estaría
+        escribiéndote una carta para el día en que finalmente nos conoceríamos
+        en persona, probablemente no le habría creído. JAJAJA.
+        </p>
+
+        <p>
+        En este tiempo te has ido convirtiendo poquito a poquito en alguien
+        muy especial para mí. Me gusta hablar contigo, molestarte, reírme
+        contigo, escuchar las cosas que me cuentas y descubrir cada día
+        un poquito más de ti.
+        </p>
+
+        <p>
+        Y sí, también descubrí que aparentemente puedo ponerme celosa
+        aunque todavía me haga la que no. 😭
+        </p>
+
+        <p>
+        Me gusta mucho la forma en que prestas atención a las pequeñas cosas
+        que te cuento. Me sorprende que recuerdes cosas que para mí fueron
+        conversaciones normales y que tú hayas guardado en algún rincón
+        de tu memoria.
+        </p>
+
+        <p>
+        Creo que eso es una de las cosas que más valoro de ti.
+        </p>
+
+        <p>
+        Y como nosotros ya tuvimos nuestro propio universo de Marvel y Disney...
+        </p>
+
+    </article>
+
+
+    <div class="infinito">∞</div>
+
+    <div class="frase">
+        Si existen infinitos universos, me gusta pensar que en alguno de ellos
+        también terminaríamos encontrándonos.
+    </div>
+
+    <div class="frase dorado">
+        Y si Buzz Lightyear nos enseñó a llegar al infinito y más allá,
+        entonces supongo que todavía nos queda muchísimo por descubrir. 🚀
+    </div>
+
+
+    <article class="carta">
+
+        <p>
+        No sé exactamente qué va a pasar después de hoy, y tampoco quiero
+        apresurarme a descubrirlo.
+        </p>
+
+        <p>
+        Solo sé que me hace mucha ilusión poder conocerte finalmente,
+        dejar de hablarle a una pantalla y poder decir
+        "sí, este es Daniel" mientras estás frente a mí. JAJAJA.
+        </p>
+
+        <p>
+        Gracias por este mes, por las conversaciones, por las risas,
+        por los detalles y por hacer que algo que empezó como una simple
+        broma terminara siendo algo que hoy significa tanto para mí.
+        </p>
+
+        <p>
+        Espero que este sea solamente el comienzo de muchos recuerdos bonitos.
+        </p>
+
+        <p>
+        Y si algún día volvemos a mirar hacia atrás y recordamos cómo empezó
+        todo, espero que nos riamos pensando que todo comenzó porque yo
+        simplemente decidí agarrar el celular de mi amiga para molestarte.
+        </p>
+
+    </article>
+
+
+    <!-- FOTOS -->
+
+    <section class="fotos">
+
+        <h2>Algunos de nuestros recuerdos ♡</h2>
+
+        <div class="galeria">
+
+            <!-- AQUÍ PUEDES PONER TUS FOTOS DESPUÉS -->
+
+            <div class="foto"
+                 style="display:flex;align-items:center;justify-content:center;">
+                📸<br>Tu primera foto
+            </div>
+
+            <div class="foto"
+                 style="display:flex;align-items:center;justify-content:center;">
+                💕<br>Otro recuerdo
+            </div>
+
+            <div class="foto"
+                 style="display:flex;align-items:center;justify-content:center;">
+                ✨<br>Otro momento
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOTÓN DE CORAZONES -->
+
+    <section style="margin-top:70px;text-align:center;">
+
+        <button class="boton" onclick="corazones()">
+            Haz clic aquí ♡
+        </button>
+
+        <p>
+            Porque aparentemente una cantidad normal de corazones
+            nunca es suficiente. JAJAJA
+        </p>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="final">
+
+        <h2>Hasta el infinito y más allá. 🚀</h2>
+
+        <p>
+            Gracias por formar parte de esta historia tan random.
+        </p>
+
+        <div class="firma">
+            Con cariño,<br><br>
+            Bocci ♡
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+function abrirCarta() {
+
+    document.getElementById("inicio").classList.add("ocultar");
+
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }, 500);
+
+    corazones();
+}
+
+
+function corazones() {
+
+    for(let i = 0; i < 15; i++) {
+
+        let corazon = document.createElement("div");
+
+        corazon.className = "corazon-flotante";
+
+        corazon.innerHTML =
+            ["♡","♥","✨","💫"][Math.floor(Math.random()*4)];
+
+        corazon.style.left =
+            Math.random() * 100 + "vw";
+
+        corazon.style.animationDuration =
+            (3 + Math.random()*4) + "s";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+            corazon.remove();
+        }, 7000);
+    }
+}
+
+</script>
+
+</body>
+</html>
